@@ -1,0 +1,65 @@
+# File      : .github/ISSUE_TEMPLATE/technical-task.yml
+# Developer : Ayman Ouf (M5)
+# Reviewer  : Omar Emam (M1)
+# Task(s)   : T006
+name: Technical Task
+description: Setup, infrastructure, research spike, CI/CD, refactor or test work.
+title: "[TXXX] Foundation: short title"
+labels: ["type:task"]
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: Original ID from Tasks.xlsx.
+      placeholder: T021
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: FSD module / category
+      options:
+        - FR-01 Authentication, roles and guardian linking
+        - FR-02 Study rooms with subject filtering
+        - FR-03 Progress tracking
+        - FR-04 To-do list (Kanban)
+        - FR-05 Storage: files and links
+        - FR-06 AI chat on uploaded files
+        - FR-07 Dashboards (student and guardian)
+        - FR-08 Report automation and WhatsApp delivery
+        - FR-09 Gamification
+        - FR-10 Notifications
+        - FR-11 Administration and moderation
+        - Foundation
+        - Testing
+        - Security
+        - Release
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [backend, frontend, database, devops, architecture]
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What technical outcome is needed?
+    validations:
+      required: true
+  - type: textarea
+    id: done_when
+    attributes:
+      label: Done when
+      description: Concrete, checkable outcome (use the milestone "Done when" text or the FSD where it applies).
+    validations:
+      required: true
+  - type: input
+    id: depends_on
+    attributes:
+      label: Depends on
+      placeholder: T008

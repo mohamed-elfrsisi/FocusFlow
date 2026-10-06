@@ -1,0 +1,92 @@
+# File      : .gitignore
+# Developer : Mohamed El-Farsisi (M2)
+# Reviewer  : Yasmeen Ayman (M3)
+# Task(s)   : (none)
+# Note      : PROPOSED owner: no task in Tasks.xlsx covers .gitignore; repo owner / DevOps assumed.
+# ───────── Secrets and environment (never commit) ─────────
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.pem
+secrets.json
+appsettings.*.local.json
+appsettings.Development.json
+# dotnet user-secrets live outside the repo (%APPDATA%\Microsoft\UserSecrets), listed here as a reminder
+**/UserSecrets/
+
+# ───────── .NET ─────────
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+project.lock.json
+artifacts/
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+coverage/
+coverage*.json
+coverage*.xml
+*.coverage
+*.nupkg
+*.snupkg
+.nuget/
+# Local file-storage driver used in development (STORAGE_DRIVER=local)
+server/src/FocusFlow.Api/storage/
+server/src/FocusFlow.Api/uploads/
+
+# ───────── Visual Studio / Rider / VS Code ─────────
+.vs/
+.idea/
+*.DotSettings.user
+_ReSharper*/
+*.rsuser
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# ───────── Node / React / Vite ─────────
+node_modules/
+client/dist/
+client/build/
+client/.vite/
+client/coverage/
+*.local
+.eslintcache
+.npm/
+.pnpm-store/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+playwright-report/
+test-results/
+blob-report/
+
+# ───────── Logs, OS, temp ─────────
+*.log
+logs/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.swp
+*~
+
+# ───────── Docker local data ─────────
+sqldata/

@@ -1,0 +1,6 @@
+-- File      : server/db/schema.sql
+-- Developer : Omar Emam (M1)
+-- Reviewer  : Mohamed El-Farsisi (M2)
+-- Task(s)   : T009  -  Core database schema + EF Core migrations + seed
+-- Module    : Foundation (FSD §2-8, §14-15)
+-- Purpose   : Reference script. Generate with: dotnet ef migrations script --idempotent. Do not edit by hand.

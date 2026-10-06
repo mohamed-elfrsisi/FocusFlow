@@ -1,0 +1,55 @@
+# File      : .github/ISSUE_TEMPLATE/bug.yml
+# Developer : Ayman Ouf (M5)
+# Reviewer  : Omar Emam (M1)
+# Task(s)   : T006
+name: Bug
+description: Something does not behave as the FSD describes.
+title: "[BUG] short description"
+labels: ["type:bug"]
+body:
+  - type: input
+    id: related_task
+    attributes:
+      label: Related task / FSD module
+      placeholder: T038 / FR-04
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result (per FSD / acceptance criteria)
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options: [Local, CI, Staging, Production]
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: Acceptance needs no open critical or high-severity defects (BRD §17).
+      options: [Critical, High, Medium, Low]
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      description: Remove tokens, passwords, keys and personal data before pasting.

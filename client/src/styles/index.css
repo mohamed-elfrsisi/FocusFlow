@@ -1,0 +1,12 @@
+/*
+ * File      : client/src/styles/index.css
+ * Developer : Saeid El-Kholy (M4)
+ * Reviewer  : Ayman Ouf (M5)
+ * Task(s)   : T015  -  Design system
+ * Module    : Foundation (FSD §2-8, §14-15)
+ * Purpose   : Tailwind layers and global styles.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

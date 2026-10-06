@@ -1,0 +1,65 @@
+# File      : .github/ISSUE_TEMPLATE/feature-task.yml
+# Developer : Ayman Ouf (M5)
+# Reviewer  : Omar Emam (M1)
+# Task(s)   : T006
+name: Feature / Task
+description: A planned task from Tasks.xlsx or a new feature slice (use the original task ID, e.g. T038).
+title: "[TXXX] FR-XX: short title"
+labels: ["type:feature"]
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: Original ID from Tasks.xlsx. Do not invent IDs. Ask the PM (Ayman Ouf) to add new tasks to the sheet first.
+      placeholder: T038
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: FSD module
+      options:
+        - FR-01 Authentication, roles and guardian linking
+        - FR-02 Study rooms with subject filtering
+        - FR-03 Progress tracking
+        - FR-04 To-do list (Kanban)
+        - FR-05 Storage: files and links
+        - FR-06 AI chat on uploaded files
+        - FR-07 Dashboards (student and guardian)
+        - FR-08 Report automation and WhatsApp delivery
+        - FR-09 Gamification
+        - FR-10 Notifications
+        - FR-11 Administration and moderation
+        - Foundation
+        - Testing
+        - Security
+        - Release
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What must be built and why. Reference BR-xx / FSD sections.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Given / When / Then, taken from the FSD module. Do not invent requirements.
+      placeholder: "- Given ..., when ..., then ..."
+    validations:
+      required: true
+  - type: input
+    id: depends_on
+    attributes:
+      label: Depends on
+      description: Task IDs that must be done first.
+      placeholder: T020, T030
+  - type: input
+    id: owner_reviewer
+    attributes:
+      label: Owner / Reviewer
+      placeholder: "M1 Omar Emam / M2 Mohamed El-Farsisi"

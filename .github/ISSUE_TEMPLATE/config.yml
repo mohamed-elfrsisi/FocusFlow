@@ -1,0 +1,9 @@
+# File      : .github/ISSUE_TEMPLATE/config.yml
+# Developer : Ayman Ouf (M5)
+# Reviewer  : Omar Emam (M1)
+# Task(s)   : T006
+blank_issues_enabled: false
+contact_links:
+  - name: Project documentation (BRD / FSD)
+    url: https://github.com/mohamed-elfrsisi/FocusFlow/tree/develop/docs
+    about: Check the architecture, development guide and task board before opening an issue.

@@ -1,0 +1,49 @@
+# File      : docs/environment.example
+# Developer : Yasmeen Ayman (M3)
+# Reviewer  : Saeid El-Kholy (M4)
+# Task(s)   : T012, T075
+# Note      : Keys created in T012 (Yasmeen). Production values: T075 (Omar + Mohamed).
+# FocusFlow: environment variables for the ASP.NET Core API
+# Source: FSD §4.2. Placeholders only. NEVER commit real values.
+#
+# Local development : set each one with `dotnet user-secrets set "<NAME>" "<value>"`
+#                     (run inside server/src/FocusFlow.Api). Nested keys use ":" in user-secrets
+#                     and "__" in real environment variables (ConnectionStrings:Default = ConnectionStrings__Default).
+# Staging/Production: set them in the hosting provider's environment-variable settings
+#                     (Render / Railway for the API container, Vercel / Netlify for the client).
+# CI                : generated per run inside .github/workflows/ci.yml (nothing stored in the repo).
+
+ASPNETCORE_ENVIRONMENT=Development            # Development | Staging | Production
+
+# Database (SQL Server 2022 locally, Azure SQL Database in staging/production)
+ConnectionStrings__Default=Server=localhost,1433;Database=focusflow;User Id=sa;Password=<MSSQL_SA_PASSWORD>;TrustServerCertificate=True
+
+# Auth (long random strings, 32+ characters, different per environment)
+JWT_SECRET=<32+ random characters>
+JWT_REFRESH_SECRET=<32+ random characters>
+
+# CORS and links in emails
+CLIENT_URL=http://localhost:5173
+
+# File storage (FR-05)
+STORAGE_DRIVER=local                          # local | supabase
+SUPABASE_URL=                                 # only when STORAGE_DRIVER=supabase
+SUPABASE_SERVICE_KEY=                         # server-side only, never in the client
+
+# AI providers (FR-06). Create the keys in T012. Set the current free model names from each provider's docs.
+GEMINI_API_KEY=
+GEMINI_MODEL=
+GROQ_API_KEY=                                 # optional fallback
+GROQ_MODEL=
+AI_DAILY_LIMIT=30                             # questions per student per day
+
+# WhatsApp via Twilio Sandbox (FR-08)
+TWILIO_SID=
+TWILIO_TOKEN=
+TWILIO_WHATSAPP_FROM=whatsapp:+1xxxxxxxxxx
+
+# Email (SMTP via MailKit): password reset, fallback reports
+SMTP_HOST=
+SMTP_USER=
+SMTP_PASS=
+MAIL_FROM=

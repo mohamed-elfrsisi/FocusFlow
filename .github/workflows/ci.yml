@@ -1,0 +1,112 @@
+# File      : .github/workflows/ci.yml
+# Developer : Mohamed El-Farsisi (M2)
+# Reviewer  : Yasmeen Ayman (M3)
+# Task(s)   : T021
+# Note      : Needs T008 (solution) and T026 (client app) to do real work.
+# CI (task T021). FSD §14 + §3: .NET 10 SDK, Node 20, SQL Server 2022 with Full-Text Search.
+# Until the API solution (T008) and the React app (T026) exist, the matching job skips its steps with a notice.
+# Once they exist, any failing step fails the job.
+name: ci
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect backend
+        id: detect
+        run: |
+          if [ -f server/FocusFlow.sln ]; then echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::server/FocusFlow.sln not found yet (created in T008). Backend steps skipped."
+          fi
+
+      - uses: actions/setup-dotnet@v4
+        if: steps.detect.outputs.found == 'true'
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        if: steps.detect.outputs.found == 'true'
+        run: dotnet restore server/FocusFlow.sln
+
+      - name: Lint (dotnet format)
+        if: steps.detect.outputs.found == 'true'
+        run: dotnet format server/FocusFlow.sln --verify-no-changes --no-restore
+
+      - name: Build
+        if: steps.detect.outputs.found == 'true'
+        run: dotnet build server/FocusFlow.sln --configuration Release --no-restore
+
+      - name: Start SQL Server (Full-Text Search) with throwaway CI secrets
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          SA="Ci$(openssl rand -hex 12)!aA1"
+          JWT1="$(openssl rand -hex 32)"
+          JWT2="$(openssl rand -hex 32)"
+          echo "::add-mask::$SA"; echo "::add-mask::$JWT1"; echo "::add-mask::$JWT2"
+          {
+            echo "MSSQL_SA_PASSWORD=$SA"
+            echo "JWT_SECRET=$JWT1"
+            echo "JWT_REFRESH_SECRET=$JWT2"
+          } >> "$GITHUB_ENV"
+          MSSQL_SA_PASSWORD="$SA" docker compose up -d --wait db
+
+      - name: Test
+        if: steps.detect.outputs.found == 'true'
+        run: dotnet test server/FocusFlow.sln --configuration Release --no-build
+        env:
+          # the test fixture applies the EF Core migrations (FSD §14)
+          ConnectionStrings__Default: Server=localhost,1433;Database=focusflow_test;User Id=sa;Password=${{ env.MSSQL_SA_PASSWORD }};TrustServerCertificate=True
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect frontend
+        id: detect
+        working-directory: .
+        run: |
+          if [ -f client/package.json ]; then echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::client/package.json not found yet (created in T026). Frontend steps skipped."
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.detect.outputs.found == 'true'
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: client/package-lock.json
+
+      - name: Install dependencies
+        if: steps.detect.outputs.found == 'true'
+        run: npm ci
+
+      - name: Lint
+        if: steps.detect.outputs.found == 'true'
+        run: npm run lint --if-present
+
+      - name: Build
+        if: steps.detect.outputs.found == 'true'
+        run: npm run build

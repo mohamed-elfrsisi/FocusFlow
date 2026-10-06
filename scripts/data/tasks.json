@@ -1,0 +1,2969 @@
+{
+ "_owner": "Ayman Ouf (M5) - T006/T018. Generated from Tasks.xlsx; the setup script reads only milestones and tasks.",
+ "people": {
+  "M1": "Omar Emam",
+  "M2": "Mohamed El-Farsisi",
+  "M3": "Yasmeen Ayman",
+  "M4": "Saeid El-Kholy",
+  "M5": "Ayman Ouf"
+ },
+ "milestones": [
+  {
+   "title": "M0: Foundation",
+   "due": "2026-10-23",
+   "description": "Fri 23 Oct (end W3). Repo, CI + staging, DB schema, API skeleton, design system and app shell ready; library upload and sessions API started. Includes W1 prep tasks."
+  },
+  {
+   "title": "MVP-1: Core",
+   "due": "2026-11-06",
+   "description": "Fri 6 Nov (end W5). Register / login with roles, guardian linking, Kanban board, study sessions + progress API, library upload and search work on staging."
+  },
+  {
+   "title": "Backend complete + production live",
+   "due": "2026-11-20",
+   "description": "Fri 20 Nov (end W7). Rooms, reports + delivery, AI retrieval and notifications working on the API; production deployment running; student dashboard usable."
+  },
+  {
+   "title": "FEATURE FREEZE",
+   "due": "2026-11-27",
+   "description": "Fri 27 Nov (end W8). Room screen, AI chat UI, guardian dashboard and security review finished. No new features after this day."
+  },
+  {
+   "title": "FINAL DELIVERY",
+   "due": "2026-12-03",
+   "description": "Thu 3 Dec (W9). Docs final, demo rehearsed twice, no critical bugs. Fri 4 Dec is the emergency buffer (deadline is before 5 Dec)."
+  }
+ ],
+ "tasks": [
+  {
+   "id": "T001",
+   "week": 1,
+   "dates": "4–9 Oct",
+   "module": "Foundation",
+   "title": "Learning spike: JWT, EF Core migrations, ASP.NET authorization policies",
+   "layer": "Research",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T001-jwt-ef-core-migrations",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T001] Foundation: Learning spike: JWT, EF Core migrations, ASP.NET authorization policies"
+  },
+  {
+   "id": "T002",
+   "week": 1,
+   "dates": "4–9 Oct",
+   "module": "Foundation",
+   "title": "Learning spike: SignalR hubs, Docker, GitHub Actions",
+   "layer": "Research",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:backend",
+    "area:devops",
+    "priority:high"
+   ],
+   "branch": "feature/T002-signalr-hubs-docker-github",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T002] Foundation: Learning spike: SignalR hubs, Docker, GitHub Actions"
+  },
+  {
+   "id": "T003",
+   "week": 1,
+   "dates": "4–9 Oct",
+   "module": "FR-06",
+   "title": "Learning spike: full-text search, text chunking, Gemini / Groq API basics",
+   "layer": "Research",
+   "diff": 3,
+   "hours": 4.0,
+   "priority": "Should",
+   "deps": [],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T003-full-text-search-text",
+   "fsd_section": "FSD §9 FR-06",
+   "ac": [
+    "Given a selected PDF containing the answer, then the response cites that file and page.",
+    "Given a question not covered by the files, then the assistant says it was not found in the selected files.",
+    "Given Gemini fails, then the answer is produced by Groq or a friendly error is shown, never a stack trace.",
+    "Given the 31st question of the day, then the API returns AI_LIMIT_REACHED."
+   ],
+   "issue_title": "[T003] FR-06: Learning spike: full-text search, text chunking, Gemini / Groq API basics"
+  },
+  {
+   "id": "T004",
+   "week": 1,
+   "dates": "4–9 Oct",
+   "module": "FR-05",
+   "title": "Evaluate PDF text-extraction libraries on sample Arabic and English PDFs",
+   "layer": "Research",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T004-evaluate-pdf-text-extraction",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T004] FR-05: Evaluate PDF text-extraction libraries on sample Arabic and English PDFs"
+  },
+  {
+   "id": "T005",
+   "week": 1,
+   "dates": "4–9 Oct",
+   "module": "Foundation",
+   "title": "Learning spike: React + Vite, TanStack Query, dnd-kit",
+   "layer": "Research",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T005-react-vite-tanstack-query",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T005] Foundation: Learning spike: React + Vite, TanStack Query, dnd-kit"
+  },
+  {
+   "id": "T006",
+   "week": 1,
+   "dates": "4–9 Oct",
+   "module": "Foundation",
+   "title": "Repo rules (main / develop / feature), PR template, issue board with one epic per FR",
+   "layer": "PM/Docs",
+   "diff": 1,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:documentation",
+    "priority:high"
+   ],
+   "branch": "feature/T006-repo-rules-main-develop",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T006] Foundation: Repo rules (main / develop / feature), PR template, issue board with one epic per FR"
+  },
+  {
+   "id": "T007",
+   "week": 1,
+   "dates": "4–9 Oct",
+   "module": "FR-08",
+   "title": "Learning spike: hosted services, time zones in LINQ, Twilio Sandbox",
+   "layer": "Research",
+   "diff": 3,
+   "hours": 4.0,
+   "priority": "Should",
+   "deps": [],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T007-hosted-services-time-zones",
+   "fsd_section": "FSD §9 FR-08",
+   "ac": [
+    "Given a student with an active guardian and a weekly schedule, when the time arrives, then exactly one report is created and delivered.",
+    "Given a student without guardians, then the report is delivered to the student.",
+    "Given a failed WhatsApp delivery, then it is retried and finally sent by email.",
+    "Given the report numbers, then they match the dashboard for the same period.",
+    "Given a guardian pressing Encourage, then the student sees a notification within seconds."
+   ],
+   "issue_title": "[T007] FR-08: Learning spike: hosted services, time zones in LINQ, Twilio Sandbox"
+  },
+  {
+   "id": "T008",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "Foundation",
+   "title": "API solution skeleton: feature folders, error format, validation, Swagger, API conventions",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "area:architecture",
+    "priority:high"
+   ],
+   "branch": "feature/T008-api-solution-skeleton",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T008] Foundation: API solution skeleton: feature folders, error format, validation, Swagger, API conventions"
+  },
+  {
+   "id": "T009",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "Foundation",
+   "title": "Core database schema + EF Core migrations + seed data (subjects, admin account)",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 12.0,
+   "priority": "Must",
+   "deps": [
+    "T008"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "area:database",
+    "priority:high"
+   ],
+   "branch": "feature/T009-core-database-schema",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T009] Foundation: Core database schema + EF Core migrations + seed data (subjects, admin account)"
+  },
+  {
+   "id": "T010",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "Foundation",
+   "title": "Docker compose: SQL Server with Full-Text image + local setup guide",
+   "layer": "DevOps",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:devops",
+    "area:database",
+    "priority:high"
+   ],
+   "branch": "feature/T010-docker-compose",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T010] Foundation: Docker compose: SQL Server with Full-Text image + local setup guide"
+  },
+  {
+   "id": "T011",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "FR-02",
+   "title": "Rooms REST: create / list / join / leave with capacity check in a transaction",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T011-rooms-rest",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T011] FR-02: Rooms REST: create / list / join / leave with capacity check in a transaction"
+  },
+  {
+   "id": "T012",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "FR-05",
+   "title": "Create provider accounts and keys (Gemini, Groq, Supabase bucket) + env variables",
+   "layer": "DevOps",
+   "diff": 1,
+   "hours": 2.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:devops",
+    "priority:high"
+   ],
+   "branch": "feature/T012-create-provider-accounts",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T012] FR-05: Create provider accounts and keys (Gemini, Groq, Supabase bucket) + env variables"
+  },
+  {
+   "id": "T013",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "FR-05",
+   "title": "Private storage prototype: upload + signed URL (60 seconds)",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [
+    "T012"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T013-private-storage-prototype",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T013] FR-05: Private storage prototype: upload + signed URL (60 seconds)"
+  },
+  {
+   "id": "T014",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "FR-05",
+   "title": "Library tables + PDF upload endpoint (type, size, quota validation)",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 12.0,
+   "priority": "Must",
+   "deps": [
+    "T013"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T014-library-tables-pdf-upload",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T014] FR-05: Library tables + PDF upload endpoint (type, size, quota validation)"
+  },
+  {
+   "id": "T015",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "Foundation",
+   "title": "Design system: purple tokens, typography, core components",
+   "layer": "Design",
+   "diff": 3,
+   "hours": 12.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T015-design-system",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T015] Foundation: Design system: purple tokens, typography, core components"
+  },
+  {
+   "id": "T016",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "Foundation",
+   "title": "Wireframes: student screens (dashboard, Kanban, library, rooms)",
+   "layer": "Design",
+   "diff": 2,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T016-wireframes",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T016] Foundation: Wireframes: student screens (dashboard, Kanban, library, rooms)"
+  },
+  {
+   "id": "T017",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "Foundation",
+   "title": "Test strategy, QA checklist, seed-data scripts",
+   "layer": "QA",
+   "diff": 2,
+   "hours": 6.0,
+   "priority": "Should",
+   "deps": [],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:test",
+    "priority:medium"
+   ],
+   "branch": "feature/T017-test-strategy-qa-checklist",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T017] Foundation: Test strategy, QA checklist, seed-data scripts"
+  },
+  {
+   "id": "T018",
+   "week": 2,
+   "dates": "10–16 Oct",
+   "module": "Foundation",
+   "title": "Sprint plan and ownership review with supervisor; keep BRD / FSD updated",
+   "layer": "PM/Docs",
+   "diff": 1,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:documentation",
+    "priority:high"
+   ],
+   "branch": "feature/T018-sprint-plan-and-ownership",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T018] Foundation: Sprint plan and ownership review with supervisor; keep BRD / FSD updated"
+  },
+  {
+   "id": "T019",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "FR-01",
+   "title": "Register / login / refresh: bcrypt hashing, JWT access token + httpOnly refresh cookie (part 1/2)",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T009"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T019-register-login-refresh-p1",
+   "fsd_section": "FSD §9 FR-01",
+   "ac": [
+    "Given a new visitor, when they register as Student with valid data, then an account exists and they can log in.",
+    "Given a student, when they create an invitation and a guardian enters the code, then the link is Active and the guardian sees the student.",
+    "Given an expired or used code, when a guardian submits it, then the system shows INVALID_OR_EXPIRED_CODE.",
+    "Given an active link, when the student revokes it, then the guardian can no longer open the student's data (403).",
+    "Given a student without any guardian, then the dashboard shows an optional invite prompt and no error."
+   ],
+   "issue_title": "[T019] FR-01: Register / login / refresh: bcrypt hashing, JWT access token + httpOnly refresh cookie (part 1/2)"
+  },
+  {
+   "id": "T020",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "FR-01",
+   "title": "Register / login / refresh: bcrypt hashing, JWT access token + httpOnly refresh cookie (part 2/2)",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T019"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T020-register-login-refresh-p2",
+   "fsd_section": "FSD §9 FR-01",
+   "ac": [
+    "Given a new visitor, when they register as Student with valid data, then an account exists and they can log in.",
+    "Given a student, when they create an invitation and a guardian enters the code, then the link is Active and the guardian sees the student.",
+    "Given an expired or used code, when a guardian submits it, then the system shows INVALID_OR_EXPIRED_CODE.",
+    "Given an active link, when the student revokes it, then the guardian can no longer open the student's data (403).",
+    "Given a student without any guardian, then the dashboard shows an optional invite prompt and no error."
+   ],
+   "issue_title": "[T020] FR-01: Register / login / refresh: bcrypt hashing, JWT access token + httpOnly refresh cookie (part 2/2)"
+  },
+  {
+   "id": "T021",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "Foundation",
+   "title": "CI pipeline: build, test and lint on every pull request",
+   "layer": "DevOps",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T008"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:devops",
+    "priority:high"
+   ],
+   "branch": "feature/T021-ci-pipeline",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T021] Foundation: CI pipeline: build, test and lint on every pull request"
+  },
+  {
+   "id": "T022",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "Foundation",
+   "title": "Staging environment + auto-deploy from develop branch",
+   "layer": "DevOps",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T021"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:task",
+    "area:devops",
+    "priority:high"
+   ],
+   "branch": "feature/T022-staging-environment-auto-deploy",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T022] Foundation: Staging environment + auto-deploy from develop branch"
+  },
+  {
+   "id": "T023",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "FR-05",
+   "title": "Link items: URL validation + CRUD",
+   "layer": "Backend",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [
+    "T014"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T023-link-items",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T023] FR-05: Link items: URL validation + CRUD"
+  },
+  {
+   "id": "T024",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "FR-05",
+   "title": "Library list / search / filter by subject + rename, move, delete",
+   "layer": "Backend",
+   "diff": 2,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [
+    "T014"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T024-library-list-search-filter",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T024] FR-05: Library list / search / filter by subject + rename, move, delete"
+  },
+  {
+   "id": "T025",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "FR-05",
+   "title": "Background text extraction into page chunks (hosted service) (part 1/2)",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 7.0,
+   "priority": "Should",
+   "deps": [
+    "T014",
+    "T004"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T025-background-text-extraction-into-p1",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T025] FR-05: Background text extraction into page chunks (hosted service) (part 1/2)"
+  },
+  {
+   "id": "T026",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "Foundation",
+   "title": "React app shell: routing, role guards, axios + token refresh, Zustand store",
+   "layer": "Frontend",
+   "diff": 3,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [
+    "T015"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T026-react-app-shell",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T026] Foundation: React app shell: routing, role guards, axios + token refresh, Zustand store"
+  },
+  {
+   "id": "T027",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "FR-01",
+   "title": "Auth screens: register (role cards), login, forgot password",
+   "layer": "Frontend",
+   "diff": 2,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [
+    "T026",
+    "T020"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T027-auth-screens",
+   "fsd_section": "FSD §9 FR-01",
+   "ac": [
+    "Given a new visitor, when they register as Student with valid data, then an account exists and they can log in.",
+    "Given a student, when they create an invitation and a guardian enters the code, then the link is Active and the guardian sees the student.",
+    "Given an expired or used code, when a guardian submits it, then the system shows INVALID_OR_EXPIRED_CODE.",
+    "Given an active link, when the student revokes it, then the guardian can no longer open the student's data (403).",
+    "Given a student without any guardian, then the dashboard shows an optional invite prompt and no error."
+   ],
+   "issue_title": "[T027] FR-01: Auth screens: register (role cards), login, forgot password"
+  },
+  {
+   "id": "T028",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "FR-03",
+   "title": "Study sessions API (timer / manual validation) + weekly goals",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 12.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T028-study-sessions-api-timer",
+   "fsd_section": "FSD §9 FR-03",
+   "ac": [
+    "Given logged sessions, then the weekly total equals the sum of their durations.",
+    "Given a goal of 600 minutes and 300 studied, then goal percent is 50.",
+    "Given no activity yesterday, then the streak shows 0 and restarts at 1 after the next activity.",
+    "Given an unlinked student id, when a guardian requests progress, then the API returns 403."
+   ],
+   "issue_title": "[T028] FR-03: Study sessions API (timer / manual validation) + weekly goals"
+  },
+  {
+   "id": "T029",
+   "week": 3,
+   "dates": "17–23 Oct",
+   "module": "FR-03",
+   "title": "Personal focus timer UI + manual session entry + weekly goal form",
+   "layer": "Frontend",
+   "diff": 2,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T028",
+    "T026"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "M0: Foundation",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T029-personal-focus-timer-ui",
+   "fsd_section": "FSD §9 FR-03",
+   "ac": [
+    "Given logged sessions, then the weekly total equals the sum of their durations.",
+    "Given a goal of 600 minutes and 300 studied, then goal percent is 50.",
+    "Given no activity yesterday, then the streak shows 0 and restarts at 1 after the next activity.",
+    "Given an unlinked student id, when a guardian requests progress, then the API returns 403."
+   ],
+   "issue_title": "[T029] FR-03: Personal focus timer UI + manual session entry + weekly goal form"
+  },
+  {
+   "id": "T030",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-01",
+   "title": "Role policies (Student / Guardian / Admin / ViewStudent) + rate limiting on auth endpoints",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T020"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T030-role-policies-student-guardian",
+   "fsd_section": "FSD §9 FR-01",
+   "ac": [
+    "Given a new visitor, when they register as Student with valid data, then an account exists and they can log in.",
+    "Given a student, when they create an invitation and a guardian enters the code, then the link is Active and the guardian sees the student.",
+    "Given an expired or used code, when a guardian submits it, then the system shows INVALID_OR_EXPIRED_CODE.",
+    "Given an active link, when the student revokes it, then the guardian can no longer open the student's data (403).",
+    "Given a student without any guardian, then the dashboard shows an optional invite prompt and no error."
+   ],
+   "issue_title": "[T030] FR-01: Role policies (Student / Guardian / Admin / ViewStudent) + rate limiting on auth endpoints"
+  },
+  {
+   "id": "T031",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-01",
+   "title": "Password reset by email (MailKit SMTP, single-use tokens); email verification postponed",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 5.0,
+   "priority": "Must",
+   "deps": [
+    "T020"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T031-password-reset-by-email",
+   "fsd_section": "FSD §9 FR-01",
+   "ac": [
+    "Given a new visitor, when they register as Student with valid data, then an account exists and they can log in.",
+    "Given a student, when they create an invitation and a guardian enters the code, then the link is Active and the guardian sees the student.",
+    "Given an expired or used code, when a guardian submits it, then the system shows INVALID_OR_EXPIRED_CODE.",
+    "Given an active link, when the student revokes it, then the guardian can no longer open the student's data (403).",
+    "Given a student without any guardian, then the dashboard shows an optional invite prompt and no error."
+   ],
+   "issue_title": "[T031] FR-01: Password reset by email (MailKit SMTP, single-use tokens); email verification postponed"
+  },
+  {
+   "id": "T032",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-01",
+   "title": "Guardian linking API: invite code/link, accept, revoke (atomic update, 7-day expiry, max 5 pending) (part 1/2)",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 7.0,
+   "priority": "Must",
+   "deps": [
+    "T030"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T032-guardian-linking-api-p1",
+   "fsd_section": "FSD §9 FR-01",
+   "ac": [
+    "Given a new visitor, when they register as Student with valid data, then an account exists and they can log in.",
+    "Given a student, when they create an invitation and a guardian enters the code, then the link is Active and the guardian sees the student.",
+    "Given an expired or used code, when a guardian submits it, then the system shows INVALID_OR_EXPIRED_CODE.",
+    "Given an active link, when the student revokes it, then the guardian can no longer open the student's data (403).",
+    "Given a student without any guardian, then the dashboard shows an optional invite prompt and no error."
+   ],
+   "issue_title": "[T032] FR-01: Guardian linking API: invite code/link, accept, revoke (atomic update, 7-day expiry, max 5 pending) (part 1/2)"
+  },
+  {
+   "id": "T033",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-02",
+   "title": "SignalR hub: join / leave, members list, JWT auth via query token, groups (part 1/2)",
+   "layer": "Backend",
+   "diff": 5,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T011"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T033-signalr-hub-p1",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T033] FR-02: SignalR hub: join / leave, members list, JWT auth via query token, groups (part 1/2)"
+  },
+  {
+   "id": "T034",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-02",
+   "title": "SignalR hub: join / leave, members list, JWT auth via query token, groups (part 2/2)",
+   "layer": "Backend",
+   "diff": 5,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T033"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T034-signalr-hub-p2",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T034] FR-02: SignalR hub: join / leave, members list, JWT auth via query token, groups (part 2/2)"
+  },
+  {
+   "id": "T035",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-05",
+   "title": "Background text extraction into page chunks (hosted service) (part 2/2)",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 7.0,
+   "priority": "Should",
+   "deps": [
+    "T025"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T035-background-text-extraction-into-p2",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T035] FR-05: Background text extraction into page chunks (hosted service) (part 2/2)"
+  },
+  {
+   "id": "T036",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-05",
+   "title": "Full-text index on chunks + ranked search query",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Should",
+   "deps": [
+    "T035"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "area:database",
+    "priority:medium"
+   ],
+   "branch": "feature/T036-full-text-index-on",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T036] FR-05: Full-text index on chunks + ranked search query"
+  },
+  {
+   "id": "T037",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "Foundation",
+   "title": "Wireframes: guardian + admin screens, quick usability check with 3 students",
+   "layer": "Design",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [
+    "T016"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:task",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T037-wireframes",
+   "fsd_section": "FSD §2–8, §14, §15",
+   "ac": [],
+   "issue_title": "[T037] Foundation: Wireframes: guardian + admin screens, quick usability check with 3 students"
+  },
+  {
+   "id": "T038",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-04",
+   "title": "Tasks API: CRUD, move between columns, positions, done_at",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T038-tasks-api",
+   "fsd_section": "FSD §9 FR-04",
+   "ac": [
+    "Given a task in To Do, when the student drags it to Done, then it persists after refresh and points are added once.",
+    "Given a Done task, when it is reopened, then its points are removed.",
+    "Given 10 tasks with 7 done, then completion rate shows 70%. (Deferred: task analytics is in the Backlog sheet, outside the 5 Dec scope.)",
+    "Given another student's task id, then the API returns 404."
+   ],
+   "issue_title": "[T038] FR-04: Tasks API: CRUD, move between columns, positions, done_at"
+  },
+  {
+   "id": "T039",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-04",
+   "title": "Kanban UI: 3 columns, quick-add, drag and drop, optimistic updates (part 1/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T038",
+    "T026"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T039-kanban-ui-p1",
+   "fsd_section": "FSD §9 FR-04",
+   "ac": [
+    "Given a task in To Do, when the student drags it to Done, then it persists after refresh and points are added once.",
+    "Given a Done task, when it is reopened, then its points are removed.",
+    "Given 10 tasks with 7 done, then completion rate shows 70%. (Deferred: task analytics is in the Backlog sheet, outside the 5 Dec scope.)",
+    "Given another student's task id, then the API returns 404."
+   ],
+   "issue_title": "[T039] FR-04: Kanban UI: 3 columns, quick-add, drag and drop, optimistic updates (part 1/2)"
+  },
+  {
+   "id": "T040",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-03",
+   "title": "Progress aggregates: per subject / day, time zones, streak, goal percent (part 1/2)",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T028"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T040-progress-aggregates-p1",
+   "fsd_section": "FSD §9 FR-03",
+   "ac": [
+    "Given logged sessions, then the weekly total equals the sum of their durations.",
+    "Given a goal of 600 minutes and 300 studied, then goal percent is 50.",
+    "Given no activity yesterday, then the streak shows 0 and restarts at 1 after the next activity.",
+    "Given an unlinked student id, when a guardian requests progress, then the API returns 403."
+   ],
+   "issue_title": "[T040] FR-03: Progress aggregates: per subject / day, time zones, streak, goal percent (part 1/2)"
+  },
+  {
+   "id": "T041",
+   "week": 4,
+   "dates": "24–30 Oct",
+   "module": "FR-03",
+   "title": "Progress aggregates: per subject / day, time zones, streak, goal percent (part 2/2)",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T040"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T041-progress-aggregates-p2",
+   "fsd_section": "FSD §9 FR-03",
+   "ac": [
+    "Given logged sessions, then the weekly total equals the sum of their durations.",
+    "Given a goal of 600 minutes and 300 studied, then goal percent is 50.",
+    "Given no activity yesterday, then the streak shows 0 and restarts at 1 after the next activity.",
+    "Given an unlinked student id, when a guardian requests progress, then the API returns 403."
+   ],
+   "issue_title": "[T041] FR-03: Progress aggregates: per subject / day, time zones, streak, goal percent (part 2/2)"
+  },
+  {
+   "id": "T042",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-01",
+   "title": "Guardian linking API: invite code/link, accept, revoke (atomic update, 7-day expiry, max 5 pending) (part 2/2)",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 7.0,
+   "priority": "Must",
+   "deps": [
+    "T032"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T042-guardian-linking-api-p2",
+   "fsd_section": "FSD §9 FR-01",
+   "ac": [
+    "Given a new visitor, when they register as Student with valid data, then an account exists and they can log in.",
+    "Given a student, when they create an invitation and a guardian enters the code, then the link is Active and the guardian sees the student.",
+    "Given an expired or used code, when a guardian submits it, then the system shows INVALID_OR_EXPIRED_CODE.",
+    "Given an active link, when the student revokes it, then the guardian can no longer open the student's data (403).",
+    "Given a student without any guardian, then the dashboard shows an optional invite prompt and no error."
+   ],
+   "issue_title": "[T042] FR-01: Guardian linking API: invite code/link, accept, revoke (atomic update, 7-day expiry, max 5 pending) (part 2/2)"
+  },
+  {
+   "id": "T043",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-01",
+   "title": "My Guardians screen + Invite modal (code, link, copy, WhatsApp share)",
+   "layer": "Frontend",
+   "diff": 2,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [
+    "T042",
+    "T027"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T043-my-guardians-screen-invite",
+   "fsd_section": "FSD §9 FR-01",
+   "ac": [
+    "Given a new visitor, when they register as Student with valid data, then an account exists and they can log in.",
+    "Given a student, when they create an invitation and a guardian enters the code, then the link is Active and the guardian sees the student.",
+    "Given an expired or used code, when a guardian submits it, then the system shows INVALID_OR_EXPIRED_CODE.",
+    "Given an active link, when the student revokes it, then the guardian can no longer open the student's data (403).",
+    "Given a student without any guardian, then the dashboard shows an optional invite prompt and no error."
+   ],
+   "issue_title": "[T043] FR-01: My Guardians screen + Invite modal (code, link, copy, WhatsApp share)"
+  },
+  {
+   "id": "T044",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-02",
+   "title": "Room chat: keep last 50 messages, rate limit, profanity filter, report message",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 10.0,
+   "priority": "Should",
+   "deps": [
+    "T034"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T044-room-chat",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T044] FR-02: Room chat: keep last 50 messages, rate limit, profanity filter, report message"
+  },
+  {
+   "id": "T045",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-02",
+   "title": "Synced Pomodoro timer: server end time, host controls, auto-log sessions at block end (part 1/2)",
+   "layer": "Backend",
+   "diff": 5,
+   "hours": 8.0,
+   "priority": "Should",
+   "deps": [
+    "T034",
+    "T028"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T045-synced-pomodoro-timer-p1",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T045] FR-02: Synced Pomodoro timer: server end time, host controls, auto-log sessions at block end (part 1/2)"
+  },
+  {
+   "id": "T046",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-05",
+   "title": "Library UI: upload, list, subject filter, rename / move, download, delete (part 1/2)",
+   "layer": "Frontend",
+   "diff": 3,
+   "hours": 9.0,
+   "priority": "Must",
+   "deps": [
+    "T024",
+    "T026"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T046-library-ui-p1",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T046] FR-05: Library UI: upload, list, subject filter, rename / move, download, delete (part 1/2)"
+  },
+  {
+   "id": "T047",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-05",
+   "title": "Library UI: upload, list, subject filter, rename / move, download, delete (part 2/2)",
+   "layer": "Frontend",
+   "diff": 3,
+   "hours": 9.0,
+   "priority": "Must",
+   "deps": [
+    "T046"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T047-library-ui-p2",
+   "fsd_section": "FSD §9 FR-05",
+   "ac": [
+    "Given a valid PDF under 10 MB, when uploaded, then it appears in the library within 5 seconds and becomes searchable shortly after.",
+    "Given a non-PDF file, then the upload is rejected with PDF_ONLY.",
+    "Given another user's item id, then the API returns 404 and no URL is issued.",
+    "Given a deleted item, then its file and chunks no longer exist."
+   ],
+   "issue_title": "[T047] FR-05: Library UI: upload, list, subject filter, rename / move, download, delete (part 2/2)"
+  },
+  {
+   "id": "T048",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-04",
+   "title": "Kanban UI: 3 columns, quick-add, drag and drop, optimistic updates (part 2/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T039"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T048-kanban-ui-p2",
+   "fsd_section": "FSD §9 FR-04",
+   "ac": [
+    "Given a task in To Do, when the student drags it to Done, then it persists after refresh and points are added once.",
+    "Given a Done task, when it is reopened, then its points are removed.",
+    "Given 10 tasks with 7 done, then completion rate shows 70%. (Deferred: task analytics is in the Backlog sheet, outside the 5 Dec scope.)",
+    "Given another student's task id, then the API returns 404."
+   ],
+   "issue_title": "[T048] FR-04: Kanban UI: 3 columns, quick-add, drag and drop, optimistic updates (part 2/2)"
+  },
+  {
+   "id": "T049",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-04",
+   "title": "Kanban on mobile: tabs, Move menu, edit / delete / reopen",
+   "layer": "Frontend",
+   "diff": 3,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [
+    "T048"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T049-kanban-on-mobile",
+   "fsd_section": "FSD §9 FR-04",
+   "ac": [
+    "Given a task in To Do, when the student drags it to Done, then it persists after refresh and points are added once.",
+    "Given a Done task, when it is reopened, then its points are removed.",
+    "Given 10 tasks with 7 done, then completion rate shows 70%. (Deferred: task analytics is in the Backlog sheet, outside the 5 Dec scope.)",
+    "Given another student's task id, then the API returns 404."
+   ],
+   "issue_title": "[T049] FR-04: Kanban on mobile: tabs, Move menu, edit / delete / reopen"
+  },
+  {
+   "id": "T050",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-03",
+   "title": "Guardian progress endpoint (ViewStudent policy, statistics only)",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [
+    "T041",
+    "T030"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T050-guardian-progress-endpoint-viewstudent",
+   "fsd_section": "FSD §9 FR-03",
+   "ac": [
+    "Given logged sessions, then the weekly total equals the sum of their durations.",
+    "Given a goal of 600 minutes and 300 studied, then goal percent is 50.",
+    "Given no activity yesterday, then the streak shows 0 and restarts at 1 after the next activity.",
+    "Given an unlinked student id, when a guardian requests progress, then the API returns 403."
+   ],
+   "issue_title": "[T050] FR-03: Guardian progress endpoint (ViewStudent policy, statistics only)"
+  },
+  {
+   "id": "T051",
+   "week": 5,
+   "dates": "31 Oct–6 Nov",
+   "module": "FR-09",
+   "title": "Gamification service: points, daily cap, levels, unique point events",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 12.0,
+   "priority": "Should",
+   "deps": [
+    "T028",
+    "T038"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "MVP-1: Core",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T051-gamification-service",
+   "fsd_section": "FSD §9 FR-09",
+   "ac": [
+    "Given a task completed twice (reopened and completed again), then points are awarded once in total.",
+    "Given 150 points already earned today, then further actions award 0 points.",
+    "Given 200 total points, then the student is level 2.",
+    "Given 7 consecutive active days, then the 7-Day Streak badge is granted once. (Deferred: the badges engine is in the Backlog sheet, outside the 5 Dec scope.)"
+   ],
+   "issue_title": "[T051] FR-09: Gamification service: points, daily cap, levels, unique point events"
+  },
+  {
+   "id": "T052",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-11",
+   "title": "Admin API: subjects CRUD, user activate/deactivate, aggregate stats",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 6.0,
+   "priority": "Should",
+   "deps": [
+    "T030"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T052-admin-api",
+   "fsd_section": "FSD §9 FR-11",
+   "ac": [
+    "Given a reported message, when the admin deletes it, then it disappears from the room and the report is closed.",
+    "Given a deactivated user, then login is refused with ACCOUNT_DISABLED."
+   ],
+   "issue_title": "[T052] FR-11: Admin API: subjects CRUD, user activate/deactivate, aggregate stats"
+  },
+  {
+   "id": "T053",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-11",
+   "title": "Moderation queue: message reports, delete message, ban from rooms (API + UI)",
+   "layer": "Full-stack",
+   "diff": 3,
+   "hours": 12.0,
+   "priority": "Must",
+   "deps": [
+    "T052",
+    "T044"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T053-moderation-queue",
+   "fsd_section": "FSD §9 FR-11",
+   "ac": [
+    "Given a reported message, when the admin deletes it, then it disappears from the room and the report is closed.",
+    "Given a deactivated user, then login is refused with ACCOUNT_DISABLED."
+   ],
+   "issue_title": "[T053] FR-11: Moderation queue: message reports, delete message, ban from rooms (API + UI)"
+  },
+  {
+   "id": "T054",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-02",
+   "title": "Synced Pomodoro timer: server end time, host controls, auto-log sessions at block end (part 2/2)",
+   "layer": "Backend",
+   "diff": 5,
+   "hours": 8.0,
+   "priority": "Should",
+   "deps": [
+    "T045"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T054-synced-pomodoro-timer-p2",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T054] FR-02: Synced Pomodoro timer: server end time, host controls, auto-log sessions at block end (part 2/2)"
+  },
+  {
+   "id": "T055",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-02",
+   "title": "Rooms list UI: subject chips, search, create-room modal",
+   "layer": "Frontend",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T011",
+    "T026"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T055-rooms-list-ui",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T055] FR-02: Rooms list UI: subject chips, search, create-room modal"
+  },
+  {
+   "id": "T056",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-06",
+   "title": "Retrieval: top-5 chunks + prompt builder (history, numbered sources) (part 1/2)",
+   "layer": "Backend",
+   "diff": 5,
+   "hours": 7.0,
+   "priority": "Should",
+   "deps": [
+    "T036"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T056-retrieval-p1",
+   "fsd_section": "FSD §9 FR-06",
+   "ac": [
+    "Given a selected PDF containing the answer, then the response cites that file and page.",
+    "Given a question not covered by the files, then the assistant says it was not found in the selected files.",
+    "Given Gemini fails, then the answer is produced by Groq or a friendly error is shown, never a stack trace.",
+    "Given the 31st question of the day, then the API returns AI_LIMIT_REACHED."
+   ],
+   "issue_title": "[T056] FR-06: Retrieval: top-5 chunks + prompt builder (history, numbered sources) (part 1/2)"
+  },
+  {
+   "id": "T057",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-06",
+   "title": "Retrieval: top-5 chunks + prompt builder (history, numbered sources) (part 2/2)",
+   "layer": "Backend",
+   "diff": 5,
+   "hours": 7.0,
+   "priority": "Should",
+   "deps": [
+    "T056"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T057-retrieval-p2",
+   "fsd_section": "FSD §9 FR-06",
+   "ac": [
+    "Given a selected PDF containing the answer, then the response cites that file and page.",
+    "Given a question not covered by the files, then the assistant says it was not found in the selected files.",
+    "Given Gemini fails, then the answer is produced by Groq or a friendly error is shown, never a stack trace.",
+    "Given the 31st question of the day, then the API returns AI_LIMIT_REACHED."
+   ],
+   "issue_title": "[T057] FR-06: Retrieval: top-5 chunks + prompt builder (history, numbered sources) (part 2/2)"
+  },
+  {
+   "id": "T058",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-07",
+   "title": "Student dashboard: today, streak / points, goal ring, charts, deadlines, live rooms (part 1/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [
+    "T041",
+    "T051"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T058-student-dashboard-p1",
+   "fsd_section": "FSD §9 FR-07",
+   "ac": [
+    "Given a student with data, then the dashboard renders within 3 seconds with correct totals.",
+    "Given a guardian with two linked students, then two cards are shown and a third unlinked student never appears.",
+    "Given no activity for 3 days, then the guardian card shows Inactive."
+   ],
+   "issue_title": "[T058] FR-07: Student dashboard: today, streak / points, goal ring, charts, deadlines, live rooms (part 1/2)"
+  },
+  {
+   "id": "T059",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-07",
+   "title": "Student dashboard: today, streak / points, goal ring, charts, deadlines, live rooms (part 2/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [
+    "T058"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T059-student-dashboard-p2",
+   "fsd_section": "FSD §9 FR-07",
+   "ac": [
+    "Given a student with data, then the dashboard renders within 3 seconds with correct totals.",
+    "Given a guardian with two linked students, then two cards are shown and a third unlinked student never appears.",
+    "Given no activity for 3 days, then the guardian card shows Inactive."
+   ],
+   "issue_title": "[T059] FR-07: Student dashboard: today, streak / points, goal ring, charts, deadlines, live rooms (part 2/2)"
+  },
+  {
+   "id": "T060",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-09",
+   "title": "Gamification UI: points + level bar on the dashboard (no leaderboard)",
+   "layer": "Frontend",
+   "diff": 2,
+   "hours": 6.0,
+   "priority": "Should",
+   "deps": [
+    "T051"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:medium"
+   ],
+   "branch": "feature/T060-gamification-ui",
+   "fsd_section": "FSD §9 FR-09",
+   "ac": [
+    "Given a task completed twice (reopened and completed again), then points are awarded once in total.",
+    "Given 150 points already earned today, then further actions award 0 points.",
+    "Given 200 total points, then the student is level 2.",
+    "Given 7 consecutive active days, then the 7-Day Streak badge is granted once. (Deferred: the badges engine is in the Backlog sheet, outside the 5 Dec scope.)"
+   ],
+   "issue_title": "[T060] FR-09: Gamification UI: points + level bar on the dashboard (no leaderboard)"
+  },
+  {
+   "id": "T061",
+   "week": 6,
+   "dates": "7–13 Nov",
+   "module": "FR-08",
+   "title": "Report builder: period data + template message",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 12.0,
+   "priority": "Must",
+   "deps": [
+    "T041"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T061-report-builder",
+   "fsd_section": "FSD §9 FR-08",
+   "ac": [
+    "Given a student with an active guardian and a weekly schedule, when the time arrives, then exactly one report is created and delivered.",
+    "Given a student without guardians, then the report is delivered to the student.",
+    "Given a failed WhatsApp delivery, then it is retried and finally sent by email.",
+    "Given the report numbers, then they match the dashboard for the same period.",
+    "Given a guardian pressing Encourage, then the student sees a notification within seconds."
+   ],
+   "issue_title": "[T061] FR-08: Report builder: period data + template message"
+  },
+  {
+   "id": "T062",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "Testing",
+   "title": "Integration tests: auth, guardian linking, RBAC (403 / 404 rules)",
+   "layer": "QA",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T042"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:test",
+    "priority:high"
+   ],
+   "branch": "feature/T062-integration-tests",
+   "fsd_section": "FSD §13",
+   "ac": [],
+   "issue_title": "[T062] Testing: Integration tests: auth, guardian linking, RBAC (403 / 404 rules)"
+  },
+  {
+   "id": "T063",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "FR-10",
+   "title": "Notification service: table, REST endpoints, SignalR push",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Should",
+   "deps": [
+    "T020"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T063-notification-service",
+   "fsd_section": "FSD §9 FR-10",
+   "ac": [
+    "Given a guardian action, then the student's bell shows a new unread item without refreshing.",
+    "Given the user opens the list, then unread items can be marked read and the counter updates."
+   ],
+   "issue_title": "[T063] FR-10: Notification service: table, REST endpoints, SignalR push"
+  },
+  {
+   "id": "T064",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "FR-02",
+   "title": "Room screen UI: members, timer, chat, host controls, reconnect states (part 1/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [
+    "T054",
+    "T044"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T064-room-screen-ui-p1",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T064] FR-02: Room screen UI: members, timer, chat, host controls, reconnect states (part 1/2)"
+  },
+  {
+   "id": "T065",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "Release",
+   "title": "Production deployment: API container, frontend hosting, Azure SQL, env variables",
+   "layer": "DevOps",
+   "diff": 3,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [
+    "T022"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:task",
+    "area:devops",
+    "priority:high"
+   ],
+   "branch": "feature/T065-production-deployment",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T065] Release: Production deployment: API container, frontend hosting, Azure SQL, env variables"
+  },
+  {
+   "id": "T066",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "FR-06",
+   "title": "Gemini client + Groq fallback + daily limit (30 questions) + error codes",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 10.0,
+   "priority": "Should",
+   "deps": [
+    "T003"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T066-gemini-client-groq-fallback",
+   "fsd_section": "FSD §9 FR-06",
+   "ac": [
+    "Given a selected PDF containing the answer, then the response cites that file and page.",
+    "Given a question not covered by the files, then the assistant says it was not found in the selected files.",
+    "Given Gemini fails, then the answer is produced by Groq or a friendly error is shown, never a stack trace.",
+    "Given the 31st question of the day, then the API returns AI_LIMIT_REACHED."
+   ],
+   "issue_title": "[T066] FR-06: Gemini client + Groq fallback + daily limit (30 questions) + error codes"
+  },
+  {
+   "id": "T067",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "FR-06",
+   "title": "Chat sessions and messages saved with sources (file, page)",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Should",
+   "deps": [
+    "T057"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T067-chat-sessions-and-messages",
+   "fsd_section": "FSD §9 FR-06",
+   "ac": [
+    "Given a selected PDF containing the answer, then the response cites that file and page.",
+    "Given a question not covered by the files, then the assistant says it was not found in the selected files.",
+    "Given Gemini fails, then the answer is produced by Groq or a friendly error is shown, never a stack trace.",
+    "Given the 31st question of the day, then the API returns AI_LIMIT_REACHED."
+   ],
+   "issue_title": "[T067] FR-06: Chat sessions and messages saved with sources (file, page)"
+  },
+  {
+   "id": "T068",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "FR-07",
+   "title": "Guardian dashboard: student cards, status rules, detail charts (part 1/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T050"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T068-guardian-dashboard-p1",
+   "fsd_section": "FSD §9 FR-07",
+   "ac": [
+    "Given a student with data, then the dashboard renders within 3 seconds with correct totals.",
+    "Given a guardian with two linked students, then two cards are shown and a third unlinked student never appears.",
+    "Given no activity for 3 days, then the guardian card shows Inactive."
+   ],
+   "issue_title": "[T068] FR-07: Guardian dashboard: student cards, status rules, detail charts (part 1/2)"
+  },
+  {
+   "id": "T069",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "FR-07",
+   "title": "Dashboard empty states + 'invite a guardian' prompt",
+   "layer": "Frontend",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [
+    "T059"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T069-dashboard-empty-states-invite",
+   "fsd_section": "FSD §9 FR-07",
+   "ac": [
+    "Given a student with data, then the dashboard renders within 3 seconds with correct totals.",
+    "Given a guardian with two linked students, then two cards are shown and a third unlinked student never appears.",
+    "Given no activity for 3 days, then the guardian card shows Inactive."
+   ],
+   "issue_title": "[T069] FR-07: Dashboard empty states + 'invite a guardian' prompt"
+  },
+  {
+   "id": "T070",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "Release",
+   "title": "Responsive pass on every screen (phones first)",
+   "layer": "Frontend",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T070-responsive-pass-on-every",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T070] Release: Responsive pass on every screen (phones first)"
+  },
+  {
+   "id": "T071",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "FR-08",
+   "title": "Hourly scheduler: due schedules, one report per period, secure link page",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 12.0,
+   "priority": "Must",
+   "deps": [
+    "T061"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T071-hourly-scheduler",
+   "fsd_section": "FSD §9 FR-08",
+   "ac": [
+    "Given a student with an active guardian and a weekly schedule, when the time arrives, then exactly one report is created and delivered.",
+    "Given a student without guardians, then the report is delivered to the student.",
+    "Given a failed WhatsApp delivery, then it is retried and finally sent by email.",
+    "Given the report numbers, then they match the dashboard for the same period.",
+    "Given a guardian pressing Encourage, then the student sees a notification within seconds."
+   ],
+   "issue_title": "[T071] FR-08: Hourly scheduler: due schedules, one report per period, secure link page"
+  },
+  {
+   "id": "T072",
+   "week": 7,
+   "dates": "14–20 Nov",
+   "module": "FR-08",
+   "title": "Delivery: Twilio WhatsApp / wa.me + email fallback + retries",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Should",
+   "deps": [
+    "T071"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "Backend complete + production live",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T072-delivery",
+   "fsd_section": "FSD §9 FR-08",
+   "ac": [
+    "Given a student with an active guardian and a weekly schedule, when the time arrives, then exactly one report is created and delivered.",
+    "Given a student without guardians, then the report is delivered to the student.",
+    "Given a failed WhatsApp delivery, then it is retried and finally sent by email.",
+    "Given the report numbers, then they match the dashboard for the same period.",
+    "Given a guardian pressing Encourage, then the student sees a notification within seconds."
+   ],
+   "issue_title": "[T072] FR-08: Delivery: Twilio WhatsApp / wa.me + email fallback + retries"
+  },
+  {
+   "id": "T073",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "Security",
+   "title": "OWASP review: input validation, CORS, headers, secrets, dependency scan",
+   "layer": "Security",
+   "diff": 3,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T062"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:task",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T073-owasp-review",
+   "fsd_section": "FSD §12",
+   "ac": [],
+   "issue_title": "[T073] Security: OWASP review: input validation, CORS, headers, secrets, dependency scan"
+  },
+  {
+   "id": "T074",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "Release",
+   "title": "Production hardening: HTTPS, security headers, database backups, rate limits",
+   "layer": "DevOps",
+   "diff": 3,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [
+    "T065"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:task",
+    "area:devops",
+    "priority:high"
+   ],
+   "branch": "feature/T074-production-hardening",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T074] Release: Production hardening: HTTPS, security headers, database backups, rate limits"
+  },
+  {
+   "id": "T075",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "Release",
+   "title": "Production secrets and environment variables (pair with M2)",
+   "layer": "DevOps",
+   "diff": 2,
+   "hours": 3.0,
+   "priority": "Must",
+   "deps": [
+    "T065"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:task",
+    "area:devops",
+    "priority:high"
+   ],
+   "branch": "feature/T075-production-secrets-and-environment",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T075] Release: Production secrets and environment variables (pair with M2)"
+  },
+  {
+   "id": "T076",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "FR-02",
+   "title": "Room screen UI: members, timer, chat, host controls, reconnect states (part 2/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [
+    "T064"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T076-room-screen-ui-p2",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T076] FR-02: Room screen UI: members, timer, chat, host controls, reconnect states (part 2/2)"
+  },
+  {
+   "id": "T077",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "FR-02",
+   "title": "Host moderation: remove member, close room, auto-close empty rooms",
+   "layer": "Backend",
+   "diff": 3,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [
+    "T076"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T077-host-moderation",
+   "fsd_section": "FSD §9 FR-02",
+   "ac": [
+    "Given rooms for several subjects, when the student selects Physics, then only Physics rooms are listed.",
+    "Given three members in a room, when the host starts the timer, then all show the same countdown within 2 seconds.",
+    "Given a completed focus block, then each present member has a new study session and points.",
+    "Given a full room, when another student tries to join, then they receive ROOM_FULL.",
+    "Given a non-host member, when they send timer:start, then nothing changes."
+   ],
+   "issue_title": "[T077] FR-02: Host moderation: remove member, close room, auto-close empty rooms"
+  },
+  {
+   "id": "T078",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "FR-06",
+   "title": "AI chat UI: file selector, source chips, conversation history (part 1/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 7.0,
+   "priority": "Should",
+   "deps": [
+    "T067",
+    "T026"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:medium"
+   ],
+   "branch": "feature/T078-ai-chat-ui-p1",
+   "fsd_section": "FSD §9 FR-06",
+   "ac": [
+    "Given a selected PDF containing the answer, then the response cites that file and page.",
+    "Given a question not covered by the files, then the assistant says it was not found in the selected files.",
+    "Given Gemini fails, then the answer is produced by Groq or a friendly error is shown, never a stack trace.",
+    "Given the 31st question of the day, then the API returns AI_LIMIT_REACHED."
+   ],
+   "issue_title": "[T078] FR-06: AI chat UI: file selector, source chips, conversation history (part 1/2)"
+  },
+  {
+   "id": "T079",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "FR-06",
+   "title": "AI chat UI: file selector, source chips, conversation history (part 2/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 7.0,
+   "priority": "Should",
+   "deps": [
+    "T078"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:medium"
+   ],
+   "branch": "feature/T079-ai-chat-ui-p2",
+   "fsd_section": "FSD §9 FR-06",
+   "ac": [
+    "Given a selected PDF containing the answer, then the response cites that file and page.",
+    "Given a question not covered by the files, then the assistant says it was not found in the selected files.",
+    "Given Gemini fails, then the answer is produced by Groq or a friendly error is shown, never a stack trace.",
+    "Given the 31st question of the day, then the API returns AI_LIMIT_REACHED."
+   ],
+   "issue_title": "[T079] FR-06: AI chat UI: file selector, source chips, conversation history (part 2/2)"
+  },
+  {
+   "id": "T080",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "FR-06",
+   "title": "AI quality tuning: prompt tests, 'not in your files' handling, Arabic questions",
+   "layer": "Backend",
+   "diff": 4,
+   "hours": 6.0,
+   "priority": "Should",
+   "deps": [
+    "T079"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "priority:medium"
+   ],
+   "branch": "feature/T080-ai-quality-tuning",
+   "fsd_section": "FSD §9 FR-06",
+   "ac": [
+    "Given a selected PDF containing the answer, then the response cites that file and page.",
+    "Given a question not covered by the files, then the assistant says it was not found in the selected files.",
+    "Given Gemini fails, then the answer is produced by Groq or a friendly error is shown, never a stack trace.",
+    "Given the 31st question of the day, then the API returns AI_LIMIT_REACHED."
+   ],
+   "issue_title": "[T080] FR-06: AI quality tuning: prompt tests, 'not in your files' handling, Arabic questions"
+  },
+  {
+   "id": "T081",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "FR-07",
+   "title": "Guardian dashboard: student cards, status rules, detail charts (part 2/2)",
+   "layer": "Frontend",
+   "diff": 4,
+   "hours": 8.0,
+   "priority": "Must",
+   "deps": [
+    "T068"
+   ],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T081-guardian-dashboard-p2",
+   "fsd_section": "FSD §9 FR-07",
+   "ac": [
+    "Given a student with data, then the dashboard renders within 3 seconds with correct totals.",
+    "Given a guardian with two linked students, then two cards are shown and a third unlinked student never appears.",
+    "Given no activity for 3 days, then the guardian card shows Inactive."
+   ],
+   "issue_title": "[T081] FR-07: Guardian dashboard: student cards, status rules, detail charts (part 2/2)"
+  },
+  {
+   "id": "T082",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "Release",
+   "title": "UI polish and consistency review",
+   "layer": "Design",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Should",
+   "deps": [],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:task",
+    "area:frontend",
+    "priority:medium"
+   ],
+   "branch": "feature/T082-ui-polish-and-consistency",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T082] Release: UI polish and consistency review"
+  },
+  {
+   "id": "T083",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "FR-10",
+   "title": "Notification bell + list UI (unread count, mark as read)",
+   "layer": "Frontend",
+   "diff": 2,
+   "hours": 8.0,
+   "priority": "Should",
+   "deps": [
+    "T063",
+    "T026"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:feature",
+    "area:frontend",
+    "priority:medium"
+   ],
+   "branch": "feature/T083-notification-bell-list-ui",
+   "fsd_section": "FSD §9 FR-10",
+   "ac": [
+    "Given a guardian action, then the student's bell shows a new unread item without refreshing.",
+    "Given the user opens the list, then unread items can be marked read and the counter updates."
+   ],
+   "issue_title": "[T083] FR-10: Notification bell + list UI (unread count, mark as read)"
+  },
+  {
+   "id": "T084",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "FR-08",
+   "title": "Report page + Encourage / Remind actions (default weekly schedule, no settings page)",
+   "layer": "Full-stack",
+   "diff": 3,
+   "hours": 6.0,
+   "priority": "Should",
+   "deps": [
+    "T071"
+   ],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "area:frontend",
+    "priority:medium"
+   ],
+   "branch": "feature/T084-report-page-encourage-remind",
+   "fsd_section": "FSD §9 FR-08",
+   "ac": [
+    "Given a student with an active guardian and a weekly schedule, when the time arrives, then exactly one report is created and delivered.",
+    "Given a student without guardians, then the report is delivered to the student.",
+    "Given a failed WhatsApp delivery, then it is retried and finally sent by email.",
+    "Given the report numbers, then they match the dashboard for the same period.",
+    "Given a guardian pressing Encourage, then the student sees a notification within seconds."
+   ],
+   "issue_title": "[T084] FR-08: Report page + Encourage / Remind actions (default weekly schedule, no settings page)"
+  },
+  {
+   "id": "T085",
+   "week": 8,
+   "dates": "21–27 Nov",
+   "module": "Testing",
+   "title": "End-to-end tests of the main demo journeys",
+   "layer": "QA",
+   "diff": 3,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "FEATURE FREEZE",
+   "labels": [
+    "type:test",
+    "priority:high"
+   ],
+   "branch": "feature/T085-end-to-end-tests",
+   "fsd_section": "FSD §13",
+   "ac": [],
+   "issue_title": "[T085] Testing: End-to-end tests of the main demo journeys"
+  },
+  {
+   "id": "T086",
+   "week": 9,
+   "dates": "28 Nov–4 Dec",
+   "module": "Security",
+   "title": "Privacy audit: guardian sees statistics only, library files private, signed URLs",
+   "layer": "Security",
+   "diff": 3,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [
+    "T073",
+    "T047"
+   ],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "FINAL DELIVERY",
+   "labels": [
+    "type:task",
+    "area:backend",
+    "priority:high"
+   ],
+   "branch": "feature/T086-privacy-audit",
+   "fsd_section": "FSD §12",
+   "ac": [],
+   "issue_title": "[T086] Security: Privacy audit: guardian sees statistics only, library files private, signed URLs"
+  },
+  {
+   "id": "T087",
+   "week": 9,
+   "dates": "28 Nov–4 Dec",
+   "module": "Release",
+   "title": "Demo support: bug fixes, final data seeding, demo accounts",
+   "layer": "Full-stack",
+   "diff": 2,
+   "hours": 6.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M1",
+   "owner_name": "Omar Emam",
+   "reviewer": "M2",
+   "reviewer_name": "Mohamed El-Farsisi",
+   "notes": null,
+   "milestone": "FINAL DELIVERY",
+   "labels": [
+    "type:feature",
+    "area:backend",
+    "area:frontend",
+    "priority:high"
+   ],
+   "branch": "feature/T087-demo-support",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T087] Release: Demo support: bug fixes, final data seeding, demo accounts"
+  },
+  {
+   "id": "T088",
+   "week": 9,
+   "dates": "28 Nov–4 Dec",
+   "module": "Release",
+   "title": "Demo environment, uptime checks, deployment freeze",
+   "layer": "DevOps",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Must",
+   "deps": [
+    "T065"
+   ],
+   "owner": "M2",
+   "owner_name": "Mohamed El-Farsisi",
+   "reviewer": "M3",
+   "reviewer_name": "Yasmeen Ayman",
+   "notes": null,
+   "milestone": "FINAL DELIVERY",
+   "labels": [
+    "type:task",
+    "area:devops",
+    "priority:high"
+   ],
+   "branch": "feature/T088-demo-environment-uptime-checks",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T088] Release: Demo environment, uptime checks, deployment freeze"
+  },
+  {
+   "id": "T089",
+   "week": 9,
+   "dates": "28 Nov–4 Dec",
+   "module": "Release",
+   "title": "Demo dataset: sample PDFs + AI demo script",
+   "layer": "QA",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Should",
+   "deps": [
+    "T080"
+   ],
+   "owner": "M3",
+   "owner_name": "Yasmeen Ayman",
+   "reviewer": "M4",
+   "reviewer_name": "Saeid El-Kholy",
+   "notes": null,
+   "milestone": "FINAL DELIVERY",
+   "labels": [
+    "type:test",
+    "priority:medium"
+   ],
+   "branch": "feature/T089-demo-dataset",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T089] Release: Demo dataset: sample PDFs + AI demo script"
+  },
+  {
+   "id": "T090",
+   "week": 9,
+   "dates": "28 Nov–4 Dec",
+   "module": "Release",
+   "title": "Final UI polish + screenshots for documentation",
+   "layer": "Design",
+   "diff": 2,
+   "hours": 4.0,
+   "priority": "Should",
+   "deps": [],
+   "owner": "M4",
+   "owner_name": "Saeid El-Kholy",
+   "reviewer": "M5",
+   "reviewer_name": "Ayman Ouf",
+   "notes": null,
+   "milestone": "FINAL DELIVERY",
+   "labels": [
+    "type:task",
+    "area:frontend",
+    "priority:medium"
+   ],
+   "branch": "feature/T090-final-ui-polish-screenshots",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T090] Release: Final UI polish + screenshots for documentation"
+  },
+  {
+   "id": "T091",
+   "week": 9,
+   "dates": "28 Nov–4 Dec",
+   "module": "Release",
+   "title": "Final docs sync (BRD / FSD / README / API docs), demo script, final presentation",
+   "layer": "PM/Docs",
+   "diff": 1,
+   "hours": 10.0,
+   "priority": "Must",
+   "deps": [],
+   "owner": "M5",
+   "owner_name": "Ayman Ouf",
+   "reviewer": "M1",
+   "reviewer_name": "Omar Emam",
+   "notes": null,
+   "milestone": "FINAL DELIVERY",
+   "labels": [
+    "type:documentation",
+    "priority:high"
+   ],
+   "branch": "feature/T091-final-docs-sync-brd",
+   "fsd_section": "FSD §14, §15",
+   "ac": [],
+   "issue_title": "[T091] Release: Final docs sync (BRD / FSD / README / API docs), demo script, final presentation"
+  }
+ ]
+}

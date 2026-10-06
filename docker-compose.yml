@@ -1,0 +1,24 @@
+# File      : docker-compose.yml
+# Developer : Mohamed El-Farsisi (M2)
+# Reviewer  : Yasmeen Ayman (M3)
+# Task(s)   : T010
+# Local database only (FSD §4.3). Owner: T010.
+# Needs MSSQL_SA_PASSWORD from your local .env (copy .env.example). Start with: docker compose up -d --wait db
+services:
+  db:
+    build: ./server/db/docker          # SQL Server 2022 + Full-Text Search (needed by FR-05 / FR-06)
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Copy .env.example to .env and set MSSQL_SA_PASSWORD}
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 1 bash -c '</dev/tcp/localhost/1433'"]
+      interval: 5s
+      retries: 30
+
+volumes:
+  sqldata: {}
