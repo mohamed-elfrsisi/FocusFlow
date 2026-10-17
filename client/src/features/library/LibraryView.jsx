@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import api from '../../api/http';
 import UploadArea from './UploadArea';
+import LinkForm from './LinkForm';
 
 export default function LibraryView() {
   const qc = useQueryClient();
@@ -27,9 +28,29 @@ export default function LibraryView() {
 
   const refresh = () => qc.invalidateQueries({ queryKey: ['library'] });
 
+  const open = async (it) => {
+    if (it.type === 'link') return window.open(it.url, '_blank', 'noopener');
+    const { data } = await api.get(`/library/${it.id}/download`);
+    window.open(data.data.url, '_blank', 'noopener'); // الرابط بيعيش 60 ثانية
+  };
+
+  const rename = async (it) => {
+    const title = prompt('New title', it.title);
+    if (!title || title === it.title) return;
+    await api.patch(`/library/${it.id}`, { title });
+    refresh();
+  };
+
+  const remove = async (it) => {
+    if (!confirm(`Delete "${it.title}"?`)) return;
+    await api.delete(`/library/${it.id}`);
+    refresh();
+  };
+
   return (
     <div className="mx-auto max-w-[1200px] space-y-4 p-4">
       <UploadArea subjectId={subjectId} onDone={refresh} />
+      <LinkForm subjectId={subjectId} onDone={refresh} />
 
       <div className="flex gap-2">
         <input
@@ -63,6 +84,14 @@ export default function LibraryView() {
             {it.type === 'file' && !it.searchable && (
               <div className="text-xs text-zinc-500">Not searchable by AI</div>
             )}
+            <div className="mt-3 flex flex-wrap gap-3 text-sm">
+              <button onClick={() => open(it)} className="text-brand-700">Open</button>
+              <button onClick={() => rename(it)} className="text-brand-700">Rename</button>
+              {it.type === 'file' && it.searchable && (
+                <a href={`/app/ai?fileId=${it.id}`} className="text-accent">Ask AI</a>
+              )}
+              <button onClick={() => remove(it)} className="text-red-600">Delete</button>
+            </div>
           </div>
         ))}
       </div>
