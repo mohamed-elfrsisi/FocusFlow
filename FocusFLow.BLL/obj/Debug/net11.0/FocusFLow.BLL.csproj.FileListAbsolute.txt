@@ -1,0 +1,15 @@
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/bin/Debug/net11.0/FocusFLow.BLL.deps.json
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/bin/Debug/net11.0/FocusFLow.BLL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/bin/Debug/net11.0/FocusFLow.BLL.pdb
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/bin/Debug/net11.0/FocusFlow.DAL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/bin/Debug/net11.0/FocusFlow.DAL.pdb
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLow.BLL.csproj.AssemblyReference.cache
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLow.BLL.GeneratedMSBuildEditorConfig.editorconfig
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLow.BLL.AssemblyInfoInputs.cache
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLow.BLL.AssemblyInfo.cs
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLow.BLL.csproj.CoreCompileInputs.cache
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLo.CBFEF8BA.Up2Date
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLow.BLL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/refint/FocusFLow.BLL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLow.BLL.pdb
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/ref/FocusFLow.BLL.dll

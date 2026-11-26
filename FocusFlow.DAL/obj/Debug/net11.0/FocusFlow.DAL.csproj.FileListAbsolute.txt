@@ -1,0 +1,16 @@
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/bin/Debug/net11.0/FocusFlow.DAL.deps.json
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/bin/Debug/net11.0/FocusFlow.DAL.runtimeconfig.json
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/bin/Debug/net11.0/FocusFlow.DAL.runtimeconfig.dev.json
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/bin/Debug/net11.0/FocusFlow.DAL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/bin/Debug/net11.0/FocusFlow.DAL.pdb
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/FocusFlow.DAL.csproj.AssemblyReference.cache
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/FocusFlow.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/FocusFlow.DAL.AssemblyInfoInputs.cache
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/FocusFlow.DAL.AssemblyInfo.cs
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/FocusFlow.DAL.csproj.CoreCompileInputs.cache
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/FocusFlow.DAL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/refint/FocusFlow.DAL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/FocusFlow.DAL.pdb
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/FocusFlow.DAL.genruntimeconfig.cache
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/ref/FocusFlow.DAL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.DAL/obj/Debug/net11.0/FocusFlo.E2605D0C.Up2Date
