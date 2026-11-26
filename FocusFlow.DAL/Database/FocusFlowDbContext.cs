@@ -4,11 +4,7 @@ namespace FocusFlow.DAL.Database;
 
 public class FocusFlowDbContext : DbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlServer(
-            "Server = localhost;Database = FocusFlow; User Id = sa;Password = Oo.212811.Oo; MultipleActiveResultSets = true;TrustServerCertificate = True;");
-    }
+    public FocusFlowDbContext(DbContextOptions<FocusFlowDbContext> options) : base(options) { }
     public DbSet<User> Users => Set<User>();
     public DbSet<UserSession> UserSessions => Set<UserSession>();
     public DbSet<AuthToken> AuthTokens => Set<AuthToken>();

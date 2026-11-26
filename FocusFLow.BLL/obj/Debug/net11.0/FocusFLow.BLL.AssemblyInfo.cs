@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FocusFLow.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+809e599146c30cd50198163054ce55537a345e52")]
 [assembly: System.Reflection.AssemblyProductAttribute("FocusFLow.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FocusFLow.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

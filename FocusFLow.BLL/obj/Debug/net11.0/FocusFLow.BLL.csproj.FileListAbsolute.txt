@@ -13,3 +13,4 @@
 /home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/refint/FocusFLow.BLL.dll
 /home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLow.BLL.pdb
 /home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/ref/FocusFLow.BLL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFLow.BLL/obj/Debug/net11.0/FocusFLow.BLL.sourcelink.json

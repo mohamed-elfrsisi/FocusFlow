@@ -235,3 +235,4 @@
 /home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.PL/obj/Debug/net11.0/FocusFlow.PL.pdb
 /home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.PL/obj/Debug/net11.0/FocusFlow.PL.genruntimeconfig.cache
 /home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.PL/obj/Debug/net11.0/ref/FocusFlow.PL.dll
+/home/mohamed-el-farsisi/Projects/FullStack/RandomProject/FocusFlow/FocusFlow.PL/obj/Debug/net11.0/FocusFlow.PL.sourcelink.json

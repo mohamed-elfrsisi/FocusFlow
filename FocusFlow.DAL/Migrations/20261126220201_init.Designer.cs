@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FocusFlow.DAL.Migrations;
 
 [DbContext(typeof(FocusFlowDbContext))]
-[Migration("20261126171828_init")]
-partial class _20261126171828_init
+[Migration("20261126220201_init")]
+partial class _20261126220201_init
 {
     /// <inheritdoc />
     protected override void BuildTargetModel(ModelBuilder modelBuilder)

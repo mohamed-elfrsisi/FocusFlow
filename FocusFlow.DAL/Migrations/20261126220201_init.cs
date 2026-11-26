@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FocusFlow.DAL.Migrations;
 
 /// <inheritdoc />
-public partial class _20261126171828_init : Migration
+public partial class _20261126220201_init : Migration
 {
     /// <inheritdoc />
     protected override void Up(MigrationBuilder migrationBuilder)
